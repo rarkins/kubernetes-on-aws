@@ -156,8 +156,9 @@ func createSkipperPod(nameprefix, namespace, route string, labels map[string]str
 			Containers: []v1.Container{
 				{
 					Name:  "skipper",
-					Image: "registry.opensource.zalan.do/pathfinder/skipper:v0.10.210",
+					Image: "registry.opensource.zalan.do/pathfinder/skipper:v0.11.107",
 					Args: []string{
+						"skipper",
 						"-inline-routes",
 						route,
 						fmt.Sprintf("-address=:%d", port),
